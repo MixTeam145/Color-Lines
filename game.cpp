@@ -123,7 +123,7 @@ void Game::handle_turn() {
 			destroy_lines();
 			update_info();
 			if (!destroy_flag) {
-				generate(50);
+				generate(3);
 				Sleep(400);
 				destroy_lines();
 				update_info();
@@ -270,11 +270,13 @@ bool Game::game_over() {
 		ClearConsole();
 		MoveCursor(20, 3);
 		ColorPrint(F_L_WHITE, "GAME OVER!");
-		MoveCursor(18, 4);
+		MoveCursor(19, 4);
 		ColorPrint(F_L_WHITE, "Your score: ");
 		ColorPrint(F_D_BLUE, "%d", score);
-		MoveCursor(10, 6);
-		ColorPrint(F_L_WHITE, "Play again?  Yes (Enter)    No (Esc)");
+		MoveCursor(20, 6);
+		ColorPrint(F_L_WHITE, "Play again?");
+		MoveCursor(15, 8);
+		ColorPrint(F_L_WHITE, "Yes(Enter)    No(Esc)");
 		char c;
 		do {
 			c = _getch();
